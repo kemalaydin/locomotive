@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   belongs_to :type, polymorphic: true
+  has_one :reference_text
 
 end
