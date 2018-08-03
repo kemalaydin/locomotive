@@ -6,7 +6,11 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-    @person.save!
+    if @person.save
+      redirect_to person_path(@person)
+    else
+      render 'new'
+    end
   end
 
   private
