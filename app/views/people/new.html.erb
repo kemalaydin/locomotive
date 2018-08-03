@@ -1,53 +1,23 @@
 <h2>Sign up</h2>
 
-<%= form_for @person do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.phone_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.select :gender, Person.genders.keys %>
-  </div>
-  <div class="field">
-    <%= f.label :job %><br />
-    <%= f.select :job, Person.jobs.keys %>
-  </div>
+<%= simple_form_for @person do |f| %>
+  <%= f.input :name %>
+  <%= f.input :surname %>
+  <%= f.input :phone %>
+  <%= f.input :age, collection: 18..200 %>
+  <%= f.input :gender, collection: Person.genders.keys, as: :radio_buttons %>
+  <%= f.input :job, collection: Person.jobs.keys, as: :radio_buttons %>
 
-  <%= f.fields_for :user do |u| %>
-    <div class="field">
-      <%= u.label :email %><br />
-      <%= u.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+  <%= f.simple_fields_for :user do |u| %>
+    <%= u.input :email, autofocus: true, autocomplete: "email" %>
 
-    <div class="field">
-      <%= u.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= u.password_field :password, autocomplete: "off" %>
-    </div>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= u.input :password, autocomplete: "off" %>
 
-    <div class="field">
-      <%= u.label :password_confirmation %><br />
-      <%= u.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+    <%= u.input :password_confirmation, autocomplete: "off" %>
   <% end %>
 
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <%= f.button :submit %>
 <% end %>
