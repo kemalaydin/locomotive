@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :partners
   end
+  resources :people
 end
