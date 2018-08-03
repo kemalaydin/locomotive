@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :partners
+    resources :activities, only: [:index]
     get '/', to: 'admins#index'
   end
   resources :people

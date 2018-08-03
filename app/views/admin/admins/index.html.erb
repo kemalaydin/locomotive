@@ -7,8 +7,7 @@
             <div class="card-body">
                 <h5 class="card-title">
                     Son İşlemler
-                    <%# TODO: Link aktiviteler olacak %>
-                    <%= link_to  "Hepsini Gör", admin_partners_path(), class: 'badge badge-primary', style: 'float:right;' %>
+                    <%= link_to  "Hepsini Gör", admin_activities_path(), class: 'badge badge-primary', style: 'float:right;' %>
                 </h5>
                 <p class="card-text">
                     <table class="table table-hover">
@@ -16,17 +15,25 @@
                             <th style="padding: 2px">İşlemi Gerçekleştiren</th>
                             <th style="padding: 2px; text-align:center">Tipi</th>
                             <th style="padding: 2px; text-align:center">Tarih</th>
-                            <th style="padding: 2px; text-align:center"></th>
                         </thead>
                         <% @activities.each do |activity| %>
                             <tr style="padding: 0px;">
-                                <td style="padding: 2px"><%= activity.users.type.name %> <%= activity.users.type.surname %></td>
-                                <td style="padding: 2px; text-align:center"><%= activity.activity_type %></td>
-                                <td style="padding: 2px; text-align:center"><small><%= activity.updated_at.strftime("%d.%m.%Y %H:%m") %></small></td>
+                                <td style="padding: 2px"><%= activity.users.type.name %> <%= activity.users.type.surname %> <small>( <%= activity.card.id %> )</small></td>
                                 <td style="padding: 2px; text-align:center">
-                                    <%#TODO : link aktivite linki olarak düzenlenecek %>
-                                    <%= link_to  "İncele", admin_partners_path(), class: 'badge badge-info' %>
+                                    <span class="
+                                        <% if(activity.activity_type == "exit") %>
+                                            badge badge-danger
+                                        <% elsif(activity.activity_type == "pending") %>
+                                            badge badge-warning
+                                        <% else %>
+                                            badge badge-success
+                                        <% end %>
+                                    ">
+                                    <%= activity.activity_type %>
+                                    </span>
                                 </td>
+                                <td style="padding: 2px; text-align:center"><small><%= activity.updated_at.strftime("%d.%m.%Y %H:%m") %></small></td>
+                                
                             </tr>
                         <% end %>
                     </table>
