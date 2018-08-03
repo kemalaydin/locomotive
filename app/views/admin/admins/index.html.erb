@@ -1,4 +1,6 @@
 <%= link_to  "Partners", admin_partners_path() %>
+<%= link_to  "Activities", admin_activities_path() %>
+<%= link_to  "People", admin_people_path() %>
 
 <br><br><br>
 <div class="row">
@@ -80,9 +82,9 @@
                     <thead>
                         <th>Adı Soyadı</th>
                         <th>Telefon</th>
-                        <th >İş</th>
-                        <th>Cinsiyet</th>
-                        <th>Yaş</th>
+                        <th>İş</th>
+                        <th style="text-align:center">Cinsiyet</th>
+                        <th style="text-align:center">Yaş</th>
                         <th style="width: 222px"></th>
                     </thead>
                     <% @users.each do |user| %>
@@ -90,12 +92,12 @@
                             <td><%= user.type.name %> <%= user.type.surname %></td>
                             <td><%= user.type.phone %></td>
                             <td><%= user.type.job %></td>
-                            <td><%= user.type.gender %></td>
-                            <td><%= user.type.age %></td>
+                            <td style="text-align:center"><%= user.type.gender %></td>
+                            <td style="text-align:center"><%= user.type.age %></td>
                             <td>
-                                <%= link_to  "Detay", admin_partners_path(), class: 'btn btn-info btn-sm' %>
-                                <%= link_to  "Onayla", admin_partners_path(), class: 'btn btn-success btn-sm' %>
-                                <%= link_to  "Reddet", admin_partners_path(), class: 'btn btn-danger btn-sm' %>
+                                <%= link_to  "Detay", admin_person_path(user), class: 'btn btn-info btn-sm' %>
+                                <%= link_to  "Onayla", admin_person_confirm_path(user), class: 'btn btn-success btn-sm' %>
+                                <%= link_to  "Reddet", admin_person_reject_path(user), class: 'btn btn-danger btn-sm' %>
                             </td>
                         </tr>
                     <% end %>

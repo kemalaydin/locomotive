@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :partners
     resources :activities, only: [:index]
+    resources :people, except: [:new, :create]  
+    get '/people/:id/confirm', to: 'people#confirm', as: 'person_confirm'
+    get '/people/:id/reject', to: 'people#reject', as: 'person_reject'
     get '/', to: 'admins#index'
   end
   resources :people

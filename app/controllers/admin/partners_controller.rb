@@ -19,7 +19,7 @@ class Admin::PartnersController < ApplicationController
         @partner = Partner.new(partner_params)
         @partner.user.password = @partner_password
         @partner.user.password_confirmation = @partner_password
-        if(@partner.save!)
+        if(@partner.save)
             redirect_to admin_partner_path(@partner)
         else
             render 'new'

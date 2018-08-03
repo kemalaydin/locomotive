@@ -34,7 +34,7 @@
             <td><small><%= activity.updated_at.strftime("%d.%m.%Y %H:%m") %></small></td>
             <td>
                 <%#TODO : link kullanıcı linki olarak düzenlenecek %>
-                <%= link_to  "Kullanıcıyı İncele", "#", class: 'btn btn-sm btn-info' %>
+                <%= link_to  "Kullanıcıyı İncele", admin_person_path(activity.card.user.id), class: 'btn btn-sm btn-info' %>
             </td>
         </tr>
     <% end %>
