@@ -47,14 +47,6 @@ class Admin::PartnersController < ApplicationController
 
 
     private
-    def authenticate_admin     
-        redirect_to(new_user_session_path) unless current_user.type_type == "Admin"  
-    end
-
-    def password_generate
-        Devise.friendly_token.first(8)
-    end
-
     def partner_params
         params.require(:partner).permit(:title,:partner_type, user_attributes: [ :id, :email ])
     end
