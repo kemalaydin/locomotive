@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issuer: one
+  user: one
+  email: MyString
+  reference_code: MyString
+  status: 1
+
+two:
+  issuer: two
+  user: two
+  email: MyString
+  reference_code: MyString
+  status: 1

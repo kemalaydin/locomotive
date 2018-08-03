@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  reference_code: one
+  text: MyText
+
+two:
+  user: two
+  reference_code: two
+  text: MyText

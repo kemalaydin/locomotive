@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partner: one
+  user: one
+  vote: 1
+
+two:
+  partner: two
+  user: two
+  vote: 1

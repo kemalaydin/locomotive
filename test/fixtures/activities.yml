@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card: one
+  activity_code: MyString
+  activity_type: 1
+
+two:
+  card: two
+  activity_code: MyString
+  activity_type: 1
