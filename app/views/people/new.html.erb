@@ -8,6 +8,11 @@
   <%= f.input :gender, collection: Person.genders.keys, as: :radio_buttons %>
   <%= f.input :job, collection: Person.jobs.keys, as: :radio_buttons %>
 
+  <%= simple_fields_for :reference do |r| %>
+    <%= r.input :text %>
+    <%= r.input :code, required: false %>
+  <% end %>
+
   <%= f.simple_fields_for :user do |u| %>
     <%= u.input :email, autofocus: true, autocomplete: "email" %>
 
