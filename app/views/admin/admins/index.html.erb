@@ -1,0 +1,99 @@
+<%= link_to  "Partners", admin_partners_path() %>
+
+<br><br><br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    Son İşlemler
+                    <%# TODO: Link aktiviteler olacak %>
+                    <%= link_to  "Hepsini Gör", admin_partners_path(), class: 'badge badge-primary', style: 'float:right;' %>
+                </h5>
+                <p class="card-text">
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="padding: 2px">İşlemi Gerçekleştiren</th>
+                            <th style="padding: 2px; text-align:center">Tipi</th>
+                            <th style="padding: 2px; text-align:center">Tarih</th>
+                            <th style="padding: 2px; text-align:center"></th>
+                        </thead>
+                        <% @activities.each do |activity| %>
+                            <tr style="padding: 0px;">
+                                <td style="padding: 2px"><%= activity.users.type.name %> <%= activity.users.type.surname %></td>
+                                <td style="padding: 2px; text-align:center"><%= activity.activity_type %></td>
+                                <td style="padding: 2px; text-align:center"><small><%= activity.updated_at.strftime("%d.%m.%Y %H:%m") %></small></td>
+                                <td style="padding: 2px; text-align:center">
+                                    <%#TODO : link aktivite linki olarak düzenlenecek %>
+                                    <%= link_to  "İncele", admin_partners_path(), class: 'badge badge-info' %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </table>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    Partnerler
+                    <%= link_to  "Hepsini Gör", admin_partners_path(), class: 'badge badge-primary', style: 'float:right;' %>
+                </h5>
+                <p class="card-text">
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="padding: 2px">Partner Adı</th>
+                            <th style="padding: 2px">Tipi</th>
+                            <th style="padding: 2px"></th>
+                        </thead>
+                        <% @partners.each do |partner| %>
+                            <tr style="padding: 0px;">
+                                <td style="padding: 2px;"><%= partner.title %></td>
+                                <td style="padding: 2px;"><%= partner.partner_type %></td>
+                                <td style="padding: 2px;">
+                                    <%= link_to  "İncele", admin_partner_path(partner), class: 'badge badge-info' %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </table>
+                </p>
+            </div>
+        </div>
+    </div> 
+</div>
+<div class="clearfix"></div><br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Onay Bekleyen Kullanıcılar</h5>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <th>Adı Soyadı</th>
+                        <th>Telefon</th>
+                        <th >İş</th>
+                        <th>Cinsiyet</th>
+                        <th>Yaş</th>
+                        <th style="width: 222px"></th>
+                    </thead>
+                    <% @users.each do |user| %>
+                        <tr style="padding: 0px;">
+                            <td><%= user.type.name %> <%= user.type.surname %></td>
+                            <td><%= user.type.phone %></td>
+                            <td><%= user.type.job %></td>
+                            <td><%= user.type.gender %></td>
+                            <td><%= user.type.age %></td>
+                            <td>
+                                <%= link_to  "Detay", admin_partners_path(), class: 'btn btn-info btn-sm' %>
+                                <%= link_to  "Onayla", admin_partners_path(), class: 'btn btn-success btn-sm' %>
+                                <%= link_to  "Reddet", admin_partners_path(), class: 'btn btn-danger btn-sm' %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
