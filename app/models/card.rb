@@ -1,4 +1,4 @@
 class Card < ApplicationRecord
   belongs_to :user
-  has_many :activity
+  has_many :activities
 end

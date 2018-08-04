@@ -22,7 +22,14 @@ Rails.application.routes.draw do
     get '/people/:id/reject', to: 'partners#reject', as: 'person_reject'
   end
 
-  resources :people
   get '/open/:qr', to: 'people#card_login'
   get '/redirect', to: 'home#redirect', as: 'redirect_type'
+
+  resources :people, only: [:new, :create]
+  namespace :user do
+    get "/" => "main_page#index"
+    get "/card" => "cards#card"
+    resources :reference_codes, only: [:index, :new, :create, :destroy]
+  end
+
 end
