@@ -1,4 +1,7 @@
 class PeopleController < ApplicationController
+  #TODO
+  require 'securerandom'
+  require 'rqrcode'
   def new
     @person = Person.new
     @person.build_user

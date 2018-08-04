@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     get '/', to: 'admins#index'
   end
   resources :people
+  get "/card" => "cards#card"
+  resources :reference_codes, only: [:new, :create, :destroy]
 end
