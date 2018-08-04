@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     get '/people/:id/reject', to: 'people#reject', as: 'person_reject'
     get '/', to: 'admins#index'
   end
-  resources :people
-  get "/card" => "cards#card"
-  resources :reference_codes, only: [:new, :create, :destroy]
+
+  resources :people, only: [:new, :create]
+  namespace :user do
+    get "/card" => "cards#card"
+    resources :reference_codes, only: [:new, :create, :destroy]
+  end
+
 end

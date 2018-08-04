@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class Admin::CardsController < ApplicationController
   before_action :authenticate_user!
   def card
     @card = current_user.card

@@ -1,4 +1,4 @@
-class ReferenceCodesController < ApplicationController
+class Admin::ReferenceCodesController < ApplicationController
   require 'securerandom'
   before_action :authenticate_user!
   def new
