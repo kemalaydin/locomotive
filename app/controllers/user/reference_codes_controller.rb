@@ -1,4 +1,6 @@
 class User::ReferenceCodesController < ApplicationController
+  layout "panel_layout"
+
   require 'securerandom'
   before_action :authenticate_user!
   def new

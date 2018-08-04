@@ -1,5 +1,7 @@
 class User::CardsController < ApplicationController
   before_action :authenticate_user!
+  layout "panel_layout"
+
   def card
     unless current_user.active?
       return
