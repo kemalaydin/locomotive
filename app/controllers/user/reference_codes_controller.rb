@@ -1,15 +1,24 @@
-class Admin::ReferenceCodesController < ApplicationController
+class User::ReferenceCodesController < ApplicationController
   require 'securerandom'
   before_action :authenticate_user!
   def new
+    unless current_user.active?
+      return
+    end
     @reference_code = ReferenceCode.new
   end
 
   def index
+    unless current_user.active?
+      return
+    end
     @reference_codes = ReferenceCode.where(issuer_id: current_user.id)
   end
 
   def destroy
+    unless current_user.active?
+      return
+    end
     @reference_code = ReferenceCode.find(params[:id])
     if @reference_code.issuer == current_user
       @reference_code.destroy
@@ -17,7 +26,10 @@ class Admin::ReferenceCodesController < ApplicationController
   end
 
   def create
-    @reference_code = ReferenceCode.new(params)
+    unless current_user.active?
+      return
+    end
+    @reference_code = ReferenceCode.new(reference_code_params)
     @reference_code.issuer = current_user
     @reference_code.reference_code = SecureRandom.alphanumeric
     @reference_code.save!

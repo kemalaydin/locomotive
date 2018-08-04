@@ -1,6 +1,9 @@
-class Admin::CardsController < ApplicationController
+class User::CardsController < ApplicationController
   before_action :authenticate_user!
   def card
+    unless current_user.active?
+      return
+    end
     @card = current_user.card
     @activity = @card.activities.last
 

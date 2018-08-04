@@ -12,8 +12,9 @@ Rails.application.routes.draw do
 
   resources :people, only: [:new, :create]
   namespace :user do
+    get "/" => "main_page#index"
     get "/card" => "cards#card"
-    resources :reference_codes, only: [:new, :create, :destroy]
+    resources :reference_codes, only: [:index, :new, :create, :destroy]
   end
 
 end
