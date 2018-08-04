@@ -5,5 +5,5 @@ class Person < ApplicationRecord
   validates_presence_of :name, :surname, :age, :gender, :job, :phone
 
   enum gender: [ :male, :female ]
-  enum job: [ :academician, :student, :employer, :employee ]
+  enum job: [ :akademisyen, :ogrenci, :isveren, :calisan ]
 end

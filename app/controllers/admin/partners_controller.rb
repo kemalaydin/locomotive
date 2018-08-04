@@ -1,7 +1,7 @@
 class Admin::PartnersController < ApplicationController
     before_action :authenticate_user!, :authenticate_admin
     before_action :get_partner, only: [:show, :edit, :update, :destroy]
-
+    layout "panel_layout"
     def index
         @partners = Partner.all
     end

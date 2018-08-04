@@ -5,10 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   belongs_to :type, polymorphic: true
-  has_many :partner_votes, class_name: "Partner_vote", foreign_key: "user_id"
-  has_many :activities, :through => :card
-  has_one :card
-  has_one :reference_text
+
+  has_one :reference_text 
+  has_one :card 
+  has_many :activities, :through => :card 
+  has_many :partner_votes
 
   enum status: [ :pending, :active, :red, :other ]
 

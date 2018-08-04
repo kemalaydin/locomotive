@@ -122,30 +122,43 @@
         <hr>
         <table class="table table-bordered table-hover">
             <thead>
-                <th>Kart No</th>
-                <th style="text-align:center">Tipi</th>
-                <th>Aktivite Kodu</th>
+                <th>Partner Adı</th>
+                <th style="text-align:center">Kullandığı Oy</th>
                 <th style="width: 180px; text-align: center">Tarih</th>
+                <th style="width: 160px; text-align: center"></th>
             </thead>
 
-            <% @person.activities.each do |activity| %>
+            <% @person.partner_votes.each do |vote| %>
                 <tr>
-                    <td><%= activity.card.id %></td>
+                    <td>
+                        <% if(vote.partner.type_type == "Admin") %>
+                            <%= vote.partner.type.name %> <%= vote.partner.type.surname %>
+                        <% else %>
+                            <%= vote.partner.type.title %>
+                        <% end %>
+                    </td>
                     <td style="text-align:center">
                         <span class="
-                            <% if(activity.activity_type == "exit") %>
+                            <% if(vote.vote == "red") %>
                                 badge badge-danger
-                            <% elsif(activity.activity_type == "pending") %>
+                            <% elsif(vote.vote == "bekliyor") %>
                                 badge badge-warning
                             <% else %>
                                 badge badge-success
                             <% end %>
                         ">
-                        <%= activity.activity_type %>
+                        <%= vote.vote %>
                         </span>
                     </td>
-                    <td><%= activity.activity_code %></td>
-                    <td><%= activity.updated_at.strftime("%d.%m.%Y %H:%m") %></td>
+                    <td><%= vote.updated_at.strftime("%d.%m.%Y %H:%m") %></td>
+                    <td style="text-align:center">
+                        <% if((vote.partner_id == current_user.id) && (vote.vote == "bekliyor")) %>
+                             <%= link_to  "Onayla", admin_person_confirm_path(vote.user_id), class: 'btn btn-success btn-sm' %>
+                             <%= link_to  "Reddet", admin_person_reject_path(vote.user_id), class: 'btn btn-danger btn-sm' %>
+                        <% elsif(vote.partner_id == current_user.id) %>
+                            Oy Kullandınız
+                        <% end %>
+                    </td>
                 </tr>
             <% end %>
         </table>

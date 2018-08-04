@@ -19,7 +19,11 @@
             <td><%= person.type.gender %></td>
             <td><%= person.type.age %></td>
             <td><%= person.status %></td>
-            <td><%= person.card.id %></td>
+            <td>
+                <% if(person.card) %>
+                    <%= person.card.id %>
+                <% end %>
+            </td>
             <td>
                 <%= link_to  "İncele", admin_person_path(person), class: 'btn btn-info btn-sm' %>
             </td>

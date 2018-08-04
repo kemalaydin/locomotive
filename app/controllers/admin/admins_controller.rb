@@ -1,5 +1,6 @@
 class Admin::AdminsController < ApplicationController
     before_action :authenticate_user!, :authenticate_admin
+    layout "panel_layout"
     def index
 
         # @PersonCount = Person.count

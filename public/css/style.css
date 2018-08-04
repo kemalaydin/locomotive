@@ -1,0 +1,301 @@
+body{
+    background: #F0F0F2;
+    max-width: 100% !important;
+}
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #2C2C2C;
+}
+.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    }
+.section{
+    width: 100%;
+    height: 100vh;
+}
+.logo{
+    padding: 40px;
+    width: 100%;
+}
+a.corner-link {
+    color: #2C2C2C; 
+}
+a.corner-link:hover {
+    color: #C69C5F;
+    text-decoration: none;
+}
+.sign-in{
+    padding-top: 20%;
+    padding-right: 30px;
+    font-weight: 500;
+}
+.login-home{
+    float: right;
+    margin: 50px;
+    font-weight: 600;
+}
+.login-title{
+    margin-top: 20px;
+}
+.login-title span{
+    font-size:40px;
+    position: relative;
+    color: #000;
+    background: linear-gradient(to top, #F0D4AD 50%, transparent 50%);
+    width: 90%;
+}
+.top-image {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/top-img-2.jpg);
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.slogan-box{
+    padding-top: 5%;
+}
+.slogan-alt{
+    font-size:40px;
+}
+.arrow-list{
+    list-style: url(../img/arrow-icon.svg);
+    font-size: 40px;
+    line-height: 0.90em;
+}
+.arrow-list li span{
+    font-size: 20px !important;
+}
+.button-box{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.buttons{
+    width: 100% !important;
+}
+a.button-detail{
+    width: 90% !important;
+    display: inline-block;
+    background-color: #fff;
+    color: #12653D;
+	font-size:16px;
+	text-decoration:none;
+	padding:20px;
+    margin: 5%;
+    border-radius: 10px;
+}
+a.button-detail:hover{
+    background-color: rgb(36, 185, 113);
+    color: #fff;
+    transition: 0.5s;
+}
+a.button-new-user{
+    width: 90% !important;
+    display: inline-block;
+    background-color: #12653D;
+    color: #fff;
+    font-size:16px;
+    text-decoration:none;
+    padding:20px 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+a.button-new-user:hover{
+    background-color: rgb(36, 185, 113);
+    color: #fff;
+    transition: 0.5s;
+}
+a.button-detail i{
+    float: right;
+    font-size: 16px;
+    color:  #12653D;
+}
+a.button-detail:hover i{
+    color:  #fff;
+    transition: 0.5s;
+}
+a.button-new-user i{
+    color: #fff;
+    float: right;
+    font-size: 16px;
+}
+a.button-new-user:hover i{
+    color:#fff;
+    transition: 0.5s;
+}
+.about-box{
+    width: 100%;
+    height: 100%;
+}
+.section.about-us{
+    margin-top:1px;
+    background-image: url(../img/witdh.png);
+	background-size:cover;
+	background-position:center;
+    background-repeat:no-repeat;
+}
+.about-us-title{
+    color: #fff;
+    padding-top: 20%;
+}
+.about-us-desc{
+    color:#fff;
+    text-align: center;
+    font-weight: 100;
+    padding-top:20px;
+    line-height: 30px;
+}
+ul.office-list{
+    list-style-type: none;
+    color:#fff;
+    font-size: 25px;
+    font-weight: 100;
+    margin-top:20px;
+
+}
+ul.office-list li{
+    color: #fff;
+    display: inline-block;
+    padding: 20px;
+
+}
+ul.office-list li i{
+    color: #fff;
+    padding-right: 10px;
+}
+.map {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100vh;
+}
+h1.contact-title{
+    margin-top: 20%;
+    font-size:40px;
+    position: relative;
+    color: #000;
+}
+.contact-desc{
+    color:#000;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+    padding-top:20px;
+    line-height: 40px;
+}
+/* Wrapper */
+.icon-button {
+	background-color: white;
+	border-radius: 2.6rem;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.3rem;
+	height: 2.6rem;
+	line-height: 2.6rem;
+	margin: 0 5px;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	width: 2.6rem;
+}
+/* Circle */
+.icon-button span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 0;
+}
+.icon-button:hover span {
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 2.6rem;
+	margin: -1.3rem;
+}
+/* Icons */
+.icon-button i {
+	background: none;
+	color: white;
+	height: 2.6rem;
+	left: 0;
+	line-height: 2.6rem;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 2.6rem;
+	z-index: 10;
+}
+.twitter span {
+	background-color: #4099ff;
+}
+.facebook span {
+	background-color: #3B5998;
+}
+.youtube span {
+	background-color: #bb0000;
+}
+.icon-button .fa-twitter {
+	color: #4099ff;
+}
+.icon-button .fa-facebook-f {
+	color: #3B5998;
+}
+.icon-button .fa-youtube {
+	color: #bb0000;
+}
+.icon-button:hover .fa-twitter,
+.icon-button:hover .fa-facebook-f,
+.icon-button:hover .fa-youtube{
+	color: white;
+}
+@media all and (min-width: 680px){
+    .slogan {
+        font-size:40px;
+        position: relative;
+        color: #000;
+        background: linear-gradient(to top, #F0D4AD 50%, transparent 50%);
+        width: 90%;
+    }
+}
+@media all and (max-width: 680px) {
+    .icon-button {
+        border-radius: 1.6rem;
+        font-size: 0.8rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        width: 1.6rem;
+    }
+    .icon-button:hover span {
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 1.6rem;
+        margin: -0.8rem;
+    }
+    /* Icons */
+    .icon-button i {
+        height: 1.6rem;
+        line-height: 1.6rem;
+        width: 1.6rem;
+    }
+    .slogan {
+        font-size:30px;
+        position: relative;
+        color: #000;
+        background: linear-gradient(to top, #F0D4AD 50%, transparent 50%);
+        width: 90%;
+    }
+}
