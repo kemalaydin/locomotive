@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery with: :null_session
     
     def authenticate_admin     
         redirect_to(new_user_session_path) unless current_user.type_type == "Admin"  

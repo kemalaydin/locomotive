@@ -13,12 +13,12 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # DELETE /resource/sign_out
-  def destroy
-    cookies[:user_id] = nil
-    super
+  # # DELETE /resource/sign_out
+  # def destroy
+  #   cookies[:user_id] = nil
+  #   super
 
-  end
+  # end
 
   # protected
 
