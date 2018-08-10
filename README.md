@@ -80,3 +80,6 @@ Ayrıca yukarıdaki her bir sistem sayfası mobil tarayıcılar ile uyumlu olara
 ![image](https://i.imgur.com/glaSZtw.jpg)
 #### Uygulama Üye Giriş Formu [ Mobile ]
 ![image](https://i.imgur.com/le6fotz.jpg)
+
+## Credits
+todo
