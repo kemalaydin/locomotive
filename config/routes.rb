@@ -1,3 +1,35 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+  }
+
+  root "home#index"
+
+  namespace :admin do
+    resources :partners
+    resources :activities, only: [:index]
+    resources :people, except: [:new, :create]  
+    get '/people/:id/confirm', to: 'people#confirm', as: 'person_confirm'
+    get '/people/:id/reject', to: 'people#reject', as: 'person_reject'
+    get '/', to: 'admins#index'
+  end
+
+  namespace :partner do
+    get '/', to: 'partners#index'
+    get '/people/:id', to: 'partners#show', as: 'person'
+    get '/people/:id/confirm', to: 'partners#confirm', as: 'person_confirm'
+    get '/people/:id/reject', to: 'partners#reject', as: 'person_reject'
+  end
+
+  get '/open/:qr', to: 'people#card_login'
+  get '/redirect', to: 'home#redirect', as: 'redirect_type'
+
+  resources :people, only: [:new, :create]
+  namespace :user do
+    get "/" => "main_page#index"
+    get "/card" => "cards#card"
+    resources :reference_codes, only: [:index, :new, :create, :destroy]
+  end
+
 end

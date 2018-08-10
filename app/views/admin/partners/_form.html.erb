@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin,@partner] do |form| %>
+    <%= form.input :title, label: 'Partner Adı' %>
+    <%= form.simple_fields_for :user do |u| %>
+        <%= u.input :email, label: 'Eposta Adresi'  %>
+    <% end %>
+    <%= form.input :partner_type, label:'Partner Tipi',as: :select, collection: Partner.partner_types.keys, prompt: "Lütfen Partner Tipi Seçiniz" %>
+    <%= form.button :submit, class:'btn btn-primary btn-sm' %>
+<% end %>

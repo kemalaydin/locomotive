@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.1.3/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.1.3/build/ol.js"></script>
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        
+
+    <title>Locomotive CO:Lab</title>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="section no-gutters">
+        <div class="row no-gutters">
+            <div class="col-md-6 col-sm-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <a href="/">
+                                <svg id="katman_1" class="logo" data-name="katman 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 387.73 132.46">
+                                    <defs>
+                                        <style>.cls-1{fill:#222;}.cls-2{fill:#0f663c;}.cls-3{fill:#c69c5f;}</style>
+                                    </defs>
+                                    <title>Logo</title>
+                                    <path class="cls-1" d="M31,55.71H46.85v9.76H21.14V23.75H31Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M92.32,44.58A21.58,21.58,0,1,1,70.74,23,21.62,21.62,0,0,1,92.32,44.58Zm-9.76,0A11.82,11.82,0,1,0,70.74,56.4,11.8,11.8,0,0,0,82.56,44.58Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M125.72,53l6.88,6.94a21.58,21.58,0,1,1-15.26-36.84,21.32,21.32,0,0,1,15.26,6.32l-6.88,6.88a11.83,11.83,0,1,0-8.38,20.2A11.63,11.63,0,0,0,125.72,53Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M179.64,44.58A21.58,21.58,0,1,1,158.06,23,21.62,21.62,0,0,1,179.64,44.58Zm-9.75,0A11.83,11.83,0,1,0,158.06,56.4,11.81,11.81,0,0,0,169.89,44.58Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M225.68,23.75l6.69,41.72h-8.88L218.93,40.2l-8.07,25.27H202.6L194.41,40.2,190,65.47H181l6.63-41.72h11.2l7.44,25.33,8.19-25.33Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M277.66,44.58A21.58,21.58,0,1,1,256.08,23,21.62,21.62,0,0,1,277.66,44.58Zm-9.76,0A11.82,11.82,0,1,0,256.08,56.4,11.8,11.8,0,0,0,267.9,44.58Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M308.56,23.75v9.82H296.43v31.9h-9.82V33.57H274.47V23.75Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M323.58,65.47h-9.76V23.75h9.76Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M348.47,53,359,23.75h10.45L354.35,65.47H342.53L327.46,23.75h10.38Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M382.56,33.57V39.7h14.26v9.82H382.56v6.19h18.27v9.76H372.74V23.75h28.09v9.82Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-2" d="M72.05,131.15l12.62,12.73a39.57,39.57,0,1,1-28-67.55,39.17,39.17,0,0,1,28,11.58L72.05,100.53a21.7,21.7,0,1,0-15.36,37A21.38,21.38,0,0,0,72.05,131.15Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-2" d="M170.91,115.78a39.57,39.57,0,1,1-39.57-39.57A39.65,39.65,0,0,1,170.91,115.78Zm-17.89,0a21.68,21.68,0,1,0-21.68,21.67A21.67,21.67,0,0,0,153,115.78Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-2" d="M197.16,97.31v20.76H179V97.31Zm0,36v20.75H179V133.33Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-3" d="M226.52,136.19h29.13v17.89H208.52V77.59h18Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-3" d="M313.1,144.79h-32l-3.44,9.29h-19l27.64-76.49h21.67l27.76,76.49H316.54Zm-25.46-18h19l-9.52-26.38Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-3" d="M404.85,131.72a22.42,22.42,0,0,1-22.48,22.36H342.92V77.59H378.7a22.42,22.42,0,0,1,22.36,22.48,22.91,22.91,0,0,1-4.82,14A22.54,22.54,0,0,1,404.85,131.72Zm-43.93-24.08h16.17a6.12,6.12,0,0,0,6.08-6.08,6,6,0,0,0-6.08-6H360.92Zm25.92,22.47a6.11,6.11,0,0,0-6.08-6.07H360.92v12.15h19.84A6.12,6.12,0,0,0,386.84,130.11Z" transform="translate(-17.12 -23)"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="col-md-6 d-none d-md-block">
+                            <span>
+                                <p class="text-right sign-in">
+                                    <% if(user_signed_in?) %>
+                                        <%= link_to  "Çıkış Yap", destroy_user_session_path(), method: :delete, class: 'login corner-link' %>
+                                    <% else %>
+                                        <%= link_to  "Giriş Yap", new_user_session_path(), class: 'login corner-link' %>
+                                    <% end %>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-auto">
+                        </div>
+                        <div class="container">
+                            <div class="row justify-content-md-center">
+                                <div class="col-12 col-md-auto">
+                                    <div class="slogan-box">
+                                        <h2><span class="slogan">Yaşayabileceğiniz en iyi</span><br>
+                                        co-working space deneyimi</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 d-none d-md-block">
+                                </div>
+                                <div class="col-10 d-none d-sm-block">
+                                        <ul class="arrow-list">
+                                            <li><span>Modern ve ergonomik ofis tasarımı</span></li>
+                                            <li><span>Esnek çalışma saati imkanları</span></li>
+                                            <li><span>Yüksek hızlı internet</span></li>
+                                            <li><span>Sıcak/soğuk içecek ve dahası...</span></li>
+                                        </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="row button-box">
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="buttonss">
+                                        
+                                        <a href="#about-us" class="button-detail">
+                                            Bizi daha iyi tanıyın
+                                            <i class="fas fa-arrow-down"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                                <% unless(user_signed_in?) %>
+                                <div class="col-sm-12 d-sm-block d-md-none">
+                                    <span class="buttonss">
+                                        <%= link_to  "Giriş Yap", new_user_session_path(), class: 'button-new-user' %>
+                                    </span>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="buttonss">
+                                    <%= link_to new_person_path(), class:'button-new-user' do %>
+                                        <i class="fas fa-users"></i> Hemen Başvur
+                                    <% end %>
+                                       
+                                    </span>
+                                </div>
+                                <% else %>
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="buttonss">
+                                    <%= link_to redirect_type_path(), class:'button-new-user' do %>
+                                        <i class="fas fa-user"></i> Kullanıcı Paneline Git
+                                    <% end %>
+                                       
+                                    </span>
+                                </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-sm-none d-none d-md-block no-gutters">
+                <div class="top-image"></div>
+            </div>
+        </div>
+    </div>
+    <div id="about-us" class="section about-us">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-sm-12 col-md-auto">
+                    <center>
+                        <h1 class="about-us-title">Hakkımızda</h1>
+                    </center>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <center>
+                        <p class="about-us-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed nunc non magna 
+                            accumsan ullamcorper eu in sapien. Etiam ac aliquet nisl. Maecenas ornare arcu sed dictum 
+                            elementum. Nam tempus lobortis mattis. Vivamus tempor in lectus non ullamcorper. 
+                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+                            Nullam nec volutpat urna. Pellentesque ut placerat neque. Ut nec auctor augue. Etiam 
+                            tincidunt, sapien nec auctor mattis, tortor dui facilisis dolor, at luctus massa tellus 
+                            ut eros. Sed dapibus magna augue, ut volutpat arcu placerat nec.
+                        </p>
+                    </center>
+                </div>
+            </div>
+            <div class="office-info">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 d-none d-md-block col-md-auto">
+                        <center>
+                            <h1 class="about-us-title">Ofis İmkanları</h1>
+                        </center>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 d-none d-md-block col-md-auto">
+                        <center>
+                        <ul class="office-list">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Kolay Ulaşım
+                            </li>
+                            <li>
+                                <i class="far fa-handshake"></i>
+                                Özel Toplantı Odaları
+                            </li>
+                            <li>
+                                <i class="fas fa-print"></i>
+                                Yazıcı Hizmeti
+                            </li>
+                            <li>
+                                <i class="fas fa-truck-moving"></i>
+                                Kargo
+                            </li>
+                        </ul>
+                        <ul class="office-list">
+                            <li>
+                                <i class="far fa-clock"></i>
+                                7/24 Kullanım
+                            </li>
+                            <li>
+                                <i class="fas fa-desktop"></i>
+                                Bilgisayar
+                            </li>
+                            <li>
+                                <i class="fas fa-drafting-compass"></i>
+                                Çizim Araçları
+                            </li>
+                            <li>
+                                <i class="fas fa-wifi"></i>
+                                Yüksek Hızlı İnternet
+                            </li>
+                        </ul>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section contact">
+        <div class="row">
+            <div class="col-md-6 d-none d-md-block">
+                <div id="map" class="map"></div>
+                <script type="text/javascript">
+                var map = new ol.Map({
+                    interactions: ol.interaction.defaults({mouseWheelZoom:false}),
+                    target: 'map',
+                    layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                    ],
+                    view: new ol.View({
+                    center: ol.proj.fromLonLat([31.512, 40.715]),
+                    zoom: 17
+                    })
+                });
+                map.on('mousewheel', function(e){
+                    e.browserEvent.preventDefault();
+                    var now = new Date();
+                    if(lastScrollZoom === null || now > lastScrollZoom ) {
+                        var zoom_in = e.browserEvent.deltaY < 0;
+                        _panAndZoom(e.map, zoom_in, e.coordinate);
+                        lastScrollZoom = now.setMilliseconds(now.getMilliseconds() + scrollDelta)
+                    }
+                });
+                </script>   
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <center>
+                                <h1 class="contact-title">İletişim</h1>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-9 col-sm-12">
+                            <p class="contact-desc">
+                                Abant İzzet Baysal Üniversitesi Gölköy Yerleşkesi 14030 - Merkez / Bolu
+                                <br>
+                                Telefon: +90 374 254 10 00
+                                <br>
+                                Faks: +90 374 253 45 06 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <center>
+                                <a href="#" class="icon-button twitter"><i class="fab fa-twitter"></i><span></span></a>
+                                <a href="#" class="icon-button facebook"><i class="fab fa-facebook-f"></i><span></span></a>
+                                <a href="#" class="icon-button youtube"><i class="fab fa-youtube"></i><span></span></a>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-5 col-sm-12">
+                                <svg id="katman_1" class="logo" data-name="katman 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 387.73 132.46">
+                                    <defs>
+                                        <style>.cls-1{fill:#222;}.cls-2{fill:#0f663c;}.cls-3{fill:#c69c5f;}</style>
+                                    </defs>
+                                    <title>Logo</title>
+                                    <path class="cls-1" d="M31,55.71H46.85v9.76H21.14V23.75H31Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M92.32,44.58A21.58,21.58,0,1,1,70.74,23,21.62,21.62,0,0,1,92.32,44.58Zm-9.76,0A11.82,11.82,0,1,0,70.74,56.4,11.8,11.8,0,0,0,82.56,44.58Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M125.72,53l6.88,6.94a21.58,21.58,0,1,1-15.26-36.84,21.32,21.32,0,0,1,15.26,6.32l-6.88,6.88a11.83,11.83,0,1,0-8.38,20.2A11.63,11.63,0,0,0,125.72,53Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M179.64,44.58A21.58,21.58,0,1,1,158.06,23,21.62,21.62,0,0,1,179.64,44.58Zm-9.75,0A11.83,11.83,0,1,0,158.06,56.4,11.81,11.81,0,0,0,169.89,44.58Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M225.68,23.75l6.69,41.72h-8.88L218.93,40.2l-8.07,25.27H202.6L194.41,40.2,190,65.47H181l6.63-41.72h11.2l7.44,25.33,8.19-25.33Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M277.66,44.58A21.58,21.58,0,1,1,256.08,23,21.62,21.62,0,0,1,277.66,44.58Zm-9.76,0A11.82,11.82,0,1,0,256.08,56.4,11.8,11.8,0,0,0,267.9,44.58Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M308.56,23.75v9.82H296.43v31.9h-9.82V33.57H274.47V23.75Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M323.58,65.47h-9.76V23.75h9.76Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M348.47,53,359,23.75h10.45L354.35,65.47H342.53L327.46,23.75h10.38Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-1" d="M382.56,33.57V39.7h14.26v9.82H382.56v6.19h18.27v9.76H372.74V23.75h28.09v9.82Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-2" d="M72.05,131.15l12.62,12.73a39.57,39.57,0,1,1-28-67.55,39.17,39.17,0,0,1,28,11.58L72.05,100.53a21.7,21.7,0,1,0-15.36,37A21.38,21.38,0,0,0,72.05,131.15Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-2" d="M170.91,115.78a39.57,39.57,0,1,1-39.57-39.57A39.65,39.65,0,0,1,170.91,115.78Zm-17.89,0a21.68,21.68,0,1,0-21.68,21.67A21.67,21.67,0,0,0,153,115.78Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-2" d="M197.16,97.31v20.76H179V97.31Zm0,36v20.75H179V133.33Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-3" d="M226.52,136.19h29.13v17.89H208.52V77.59h18Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-3" d="M313.1,144.79h-32l-3.44,9.29h-19l27.64-76.49h21.67l27.76,76.49H316.54Zm-25.46-18h19l-9.52-26.38Z" transform="translate(-17.12 -23)"/>
+                                    <path class="cls-3" d="M404.85,131.72a22.42,22.42,0,0,1-22.48,22.36H342.92V77.59H378.7a22.42,22.42,0,0,1,22.36,22.48,22.91,22.91,0,0,1-4.82,14A22.54,22.54,0,0,1,404.85,131.72Zm-43.93-24.08h16.17a6.12,6.12,0,0,0,6.08-6.08,6,6,0,0,0-6.08-6H360.92Zm25.92,22.47a6.11,6.11,0,0,0-6.08-6.07H360.92v12.15h19.84A6.12,6.12,0,0,0,386.84,130.11Z" transform="translate(-17.12 -23)"/>
+                                </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+
+    
+  </body>
+</html>

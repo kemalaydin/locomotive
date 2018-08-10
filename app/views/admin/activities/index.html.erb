@@ -1,0 +1,41 @@
+<h2>Aktiviteler</h2>
+
+<table class="table table-hover table-bordered table-responsive-sm">
+    <thead>
+        <th>İşlemi Yapan ( card no )</th>
+        <th style="text-align:center">Tipi</th>
+        <th>Aktivite Kodu</th>
+        <th>Tarih</th>
+        <th style="width: 90px"></th>
+    </thead>
+    <%#TODO : search form%>
+    <%# search_form_for([:admin,@q]) do |f| %>
+        <%# f.label :activity_code %>
+        <%# f.search_field :activity_code %>
+        <%# f.submit %>
+    <%# end %>
+    <% @activities.each do |activity| %>
+        <tr style="padding: 0px;">
+            <td><%= activity.users.type.name %> <%= activity.users.type.surname %> <small>( <%= activity.card.id %> )</small></td>
+            <td style="text-align:center">
+                <span class="
+                    <% if(activity.activity_type == "exit") %>
+                        badge badge-danger
+                    <% elsif(activity.activity_type == "pending") %>
+                        badge badge-warning
+                    <% else %>
+                        badge badge-success
+                    <% end %>
+                ">
+                    <%= activity.activity_type %>
+                </span>
+            </td>
+            <td><small><%= activity.activity_code %></small></td>
+            <td><small><%= activity.updated_at.strftime("%d.%m.%Y %H:%m") %></small></td>
+            <td>
+                <%#TODO : link kullanıcı linki olarak düzenlenecek %>
+                <%= link_to  "Kullanıcıyı İncele", admin_person_path(activity.card.user.id), class: 'btn btn-sm btn-info' %>
+            </td>
+        </tr>
+    <% end %>
+</table>

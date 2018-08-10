@@ -1,0 +1,34 @@
+<h3>Kullanıcılar</h3>
+<table class="table table-hover table-bordered">
+    <thead>
+        <th>Adı Soyadı</th>
+        <th>Telefon</th>
+        <th>İş</th>
+        <th>Cinsiyet</th>
+        <th>Yaş</th>
+        <th>Onay</th>
+        <th>Kart No</th>
+        <th style="width: 100px"></th>
+    </thead>
+
+    <% @people.each do |person|  %>
+        <tr>
+            <td><%= person.type.name %> <%= person.type.surname %></td>
+            <td><%= person.type.phone %></td>
+            <td><%= person.type.job %></td>
+            <td><%= person.type.gender %></td>
+            <td><%= person.type.age %></td>
+            <td><%= person.status %></td>
+            <td>
+                <% if(person.card) %>
+                    <%= person.card.id %>
+                <% end %>
+            </td>
+            <td>
+                <%= link_to  "İncele", admin_person_path(person), class: 'btn btn-info btn-sm' %>
+            </td>
+        </tr>
+    <% end %>
+    
+
+</table>

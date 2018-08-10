@@ -1,0 +1,166 @@
+<h2>Kullanıcı Detayı</h2>
+<br><br>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Kişisel Bilgiler</h3>
+        <hr>
+        <table class="table-responsive-sm">
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Adı - Soyadı:</td>
+                <td><%= @person.type.name %> <%= @person.type.surname %></td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Telefon:</td>
+                <td><%= @person.type.phone %></td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">İş:</td>
+                <td><%= @person.type.job %></td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Cinsiyet:</td>
+                <td><%= @person.type.gender %></td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Yaş:</td>
+                <td><%= @person.type.age %></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="col-md-6">
+        <h3>Kayıt Bilgileri</h3>
+        <hr>
+        <table class="table-responsive-sm">
+
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Durum:</td>
+                <td>
+                    <span>
+                        <%= @person.status %>
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Tanımlı Kart:</td>
+                <td>
+                    <span>
+                        <% if(@person.card) %>
+                            <%= @person.card.id %>
+                        <% else%>
+                            <span class="badge badge-info">Henüz Kart Tanımlanmadı</span>
+                        <% end %>
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Referans:</td>
+                <td>
+                    <% if(@person.reference_text.reference_code_id?) %>
+                        <%= @person.reference_issuer_detail.type.name %> <%= @person.reference_issuer_detail.type.surname %> <%= link_to  "Detay", admin_person_path(@person.reference_issuer_detail.id), class:'badge badge-primary' %>
+                    <% else %>
+                        <span class="badge badge-warning">Herhangi bir referansı yok</span>
+                    <% end %>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:bold; text-align:right; padding: 15px;">Referans Yazısı:</td>
+                <td><%= @person.reference_text.text %></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="clearfix"></div><br><br><br>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Aktivite Bilgileri</h3>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <th>Kart No</th>
+                <th style="text-align:center">Tipi</th>
+                <th>Aktivite Kodu</th>
+                <th style="width: 180px; text-align: center">Tarih</th>
+            </thead>
+
+            <% @person.activities.each do |activity| %>
+                <tr>
+                    <td><%= activity.card.id %></td>
+                    <td style="text-align:center">
+                        <span class="
+                            <% if(activity.activity_type == "exit") %>
+                                badge badge-danger
+                            <% elsif(activity.activity_type == "pending") %>
+                                badge badge-warning
+                            <% else %>
+                                badge badge-success
+                            <% end %>
+                        ">
+                        <%= activity.activity_type %>
+                        </span>
+                    </td>
+                    <td><%= activity.activity_code %></td>
+                    <td><%= activity.updated_at.strftime("%d.%m.%Y %H:%m") %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</div>
+
+<div class="clearfix"></div><br><br><br>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Onay Bilgileri</h3>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <th>Partner Adı</th>
+                <th style="text-align:center">Kullandığı Oy</th>
+                <th style="width: 180px; text-align: center">Tarih</th>
+                <th style="width: 160px; text-align: center"></th>
+            </thead>
+
+            <% @person.partner_votes.each do |vote| %>
+                <tr>
+                    <td>
+                        <% if(vote.partner.type_type == "Admin") %>
+                            <%= vote.partner.type.name %> <%= vote.partner.type.surname %>
+                        <% else %>
+                            <%= vote.partner.type.title %>
+                        <% end %>
+                    </td>
+                    <td style="text-align:center">
+                        <span class="
+                            <% if(vote.vote == "red") %>
+                                badge badge-danger
+                            <% elsif(vote.vote == "bekliyor") %>
+                                badge badge-warning
+                            <% else %>
+                                badge badge-success
+                            <% end %>
+                        ">
+                        <%= vote.vote %>
+                        </span>
+                    </td>
+                    <td><%= vote.updated_at.strftime("%d.%m.%Y %H:%m") %></td>
+                    <td style="text-align:center">
+                        <% if((vote.partner_id == current_user.id) && (vote.vote == "bekliyor")) %>
+                             <%= link_to  "Onayla", admin_person_confirm_path(vote.user_id), class: 'btn btn-success btn-sm' %>
+                             <%= link_to  "Reddet", admin_person_reject_path(vote.user_id), class: 'btn btn-danger btn-sm' %>
+                        <% elsif(vote.partner_id == current_user.id) %>
+                            Oy Kullandınız
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</div>

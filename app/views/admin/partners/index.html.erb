@@ -1,0 +1,11 @@
+<h3>Partnerler</h3>
+<%= link_to  "Yeni Partner Ekle", new_admin_partner_path(), class: "btn btn-info btn-sm" %>
+<br>
+<table class="table table-hover table-bordered">
+    <thead>
+        <th>Partner Adı</th>
+        <th>Partner Tipi</th>
+        <th>İşlemler</th>
+    </thead>
+    <%= render(@partners) %>
+</table>
